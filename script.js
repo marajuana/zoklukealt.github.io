@@ -36,6 +36,7 @@ drone.on('open', error => {
   room.on('member_join', member => {
     members.push(member);
     updateMembersDOM();
+    ServerMessage(member + " Has joined")
   });
 
   room.on('member_leave', ({id}) => {
@@ -108,6 +109,26 @@ function createMemberElement(member) {
   return el;
 }
 
+function createServerElement(member) {
+  const el = document.createElement('div');
+  el.appendChild(document.createTextNode("SERVER NOTIFICATION"));
+  el.className = 'member';
+  el.style.color = getRandomColor();
+  return el;
+}
+
+function createSMElement(text, member) {
+  const el = document.createElement('div');
+  el.appendChild(createServerElement("test"));
+  el.appendChild(document.createTextNode(text));
+  el.className = 'message';
+  return el;
+}
+
+function ServerMessage(text) {
+  createSMElement(text)
+}
+
 function updateMembersDOM() {
   DOM.membersCount.innerText = `${members.length} users in room:`;
   DOM.membersList.innerHTML = '';
@@ -125,10 +146,15 @@ function createMessageElement(text, member) {
 }
 
 function addMessageToListDOM(text, member) {
-  const el = DOM.messages;
-  const wasTop = el.scrollTop === el.scrollHeight - el.clientHeight;
-  el.appendChild(createMessageElement(text, member));
-  if (wasTop) {
-    el.scrollTop = el.scrollHeight - el.clientHeight;
-  }
-}
+//  const el = DOM.messages;
+//  const wasTop = el.scrollTop === el.scrollHeight - el.clientHeight;
+//  el.appendChild(createMessageElement(text, member));
+//  if (wasTop) {
+//    el.scrollTop = el.scrollHeight - el.clientHeight;
+//  }
+//}
+//  return (
+//    adjs[Math.floor(Math.random() * adjs.length)] +
+//    "_" +
+//    nouns[Math.floor(Math.random() * nouns.length)]
+//  );
