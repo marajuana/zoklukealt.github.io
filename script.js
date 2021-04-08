@@ -1,17 +1,15 @@
-// PS! Replace this with your own channel ID
-// If you use this channel ID your app will stop working in the future
+
 const CLIENT_ID = 'vOAIBkmBfguAFa44';
 var txt;
 var person = prompt("Please enter your name:", "Harry Potter");
 
-
 const drone = new ScaleDrone(CLIENT_ID, {
-  data: { // Will be sent out as clientData via events
+  data: {
     name: person,
     color: getRandomColor(),
   },
 });
-
+//this the thing that controls most of the stuff you see
 let members = [];
 
 drone.on('open', error => {
