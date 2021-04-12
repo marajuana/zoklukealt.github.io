@@ -3,11 +3,13 @@
 const CLIENT_ID = 'vOAIBkmBfguAFa44';
 var txt;
 var person = prompt("Please enter your name:", "");
+var perso = person.substring( 0, 10 );
+
 
 
 const drone = new ScaleDrone(CLIENT_ID, {
   data: { // Will be sent out as clientData via events
-    name: person,
+    name: perso,
     color: getRandomColor(),
   },
 });
