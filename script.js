@@ -2,8 +2,8 @@
 // If you use this channel ID your app will stop working in the future
 const CLIENT_ID = 'vOAIBkmBfguAFa44';
 var txt;
-var person = prompt("Please enter your name:", "");
-var person = person.substring(0, 10);
+var person = prompt("Please enter your name. If it is higher than 20 characters, it will be cut short.", "");
+var person = person.substring(0, 20);
 
 
 
