@@ -3,7 +3,7 @@
 const CLIENT_ID = 'vOAIBkmBfguAFa44';
 var txt;
 var person = prompt("Please enter your name:", "");
-var perso = person.substring(0, 10);
+var person = person.substring(0, 10);
 
 
 
