@@ -2,7 +2,7 @@
 // If you use this channel ID your app will stop working in the future
 const CLIENT_ID = 'vOAIBkmBfguAFa44';
 var txt;
-var person = prompt("Please enter your name:", "Harry Potter");
+var person = prompt("Please enter your name:", "Jack Meh Off");
 
 
 const drone = new ScaleDrone(CLIENT_ID, {
