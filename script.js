@@ -9,7 +9,7 @@ var person = person.substring(0, 10);
 
 const drone = new ScaleDrone(CLIENT_ID, {
   data: { // Will be sent out as clientData via events
-    name: perso,
+    name: person,
     color: getRandomColor(),
   },
 });
