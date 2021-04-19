@@ -35,6 +35,7 @@ function doSomething() {
     }
 }
 
+doSomething()
 
 const drone = new ScaleDrone(CLIENT_ID, {
   data: { // Will be sent out as clientData via events
