@@ -21,8 +21,8 @@ function getCookie(name) {
     }
     return null;
 }
-if (getCookie("user") == null) {
-    prompt("enter name loser")
+if (getCookie("user") === null) {
+    const person = prompt("enter name loser")
     setCookie("user",person,30);
 } else {
     const person = getCookie("user")
