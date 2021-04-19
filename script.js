@@ -88,10 +88,18 @@ const DOM = {
 };
 
 DOM.form.addEventListener('submit', sendMessage);
-
+function chungus(ms) {
+    drone.publish({
+    room: 'observable-room',
+    message: ms,
+  });
+}
 function sendMessage() {
   const value = DOM.input.value;
   if (value === '') {
+    return;
+  }
+  if (value === 'e') {
     return;
   }
   DOM.input.value = '';
