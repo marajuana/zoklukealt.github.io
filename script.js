@@ -2,9 +2,38 @@
 // If you use this channel ID your app will stop working in the future
 const CLIENT_ID = 'vOAIBkmBfguAFa44';
 var txt;
-var person = prompt("Please enter your name. If it is higher than 20 characters, it will be cut short.", "");
-var person = person.substring(0, 20);
 
+
+function getCookie(name) {
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin == -1) {
+        begin = dc.indexOf(prefix);
+        if (begin != 0) return null;
+    }
+    else
+    {
+        begin += 2;
+        var end = document.cookie.indexOf(";", begin);
+        if (end == -1) {
+        end = dc.length;
+        }
+    }
+    return decodeURI(dc.substring(begin + prefix.length, end));
+} 
+
+function doSomething() {
+    var myCookie = getCookie("username");
+
+    if (myCookie == null) {
+      const person = prompt("please enter your name. it will be cut short if it is 20+ characters!");
+      const person = person.substring(0, 20);
+    }
+    else {
+      document.cookie = `username=${person}`
+    }
+}
 
 
 const drone = new ScaleDrone(CLIENT_ID, {
