@@ -56,6 +56,7 @@ drone.on('open', error => {
 });
 
 drone.on('close', event => {
+  chungus("left")
   console.log('Connection was closed', event);
 });
 
