@@ -14,6 +14,14 @@ const drone = new ScaleDrone(CLIENT_ID, {
   },
 });
 
+function serverMessage(value) {
+  drone.publish({
+    room: 'observable-room',
+    message: value,
+  });
+}
+
+
 let members = [];
 
 drone.on('open', error => {
@@ -44,6 +52,7 @@ drone.on('open', error => {
     const index = members.findIndex(member => member.id === id);
     members.splice(index, 1);
     updateMembersDOM();
+    serverMessage("i left lol")
   });
 
   room.on('data', (text, member) => {
